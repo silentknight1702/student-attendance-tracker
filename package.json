@@ -1,0 +1,23 @@
+{
+  "name": "student-attendance-tracker",
+  "version": "1.0.0",
+  "description": "Mobile app for student self-service attendance tracking with GPS location validation",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "mobile-app",
+    "admin-dashboard"
+  ],
+  "scripts": {
+    "install-all": "npm install && cd backend && npm install && cd ../mobile-app && npm install && cd ../admin-dashboard && npm install",
+    "dev": "concurrently \"cd backend && npm start\" \"cd mobile-app && npm start\" \"cd admin-dashboard && npm start\"",
+    "backend:start": "cd backend && npm start",
+    "backend:dev": "cd backend && npm run dev",
+    "mobile:start": "cd mobile-app && npm start",
+    "admin:start": "cd admin-dashboard && npm start",
+    "admin:dev": "cd admin-dashboard && npm start"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
